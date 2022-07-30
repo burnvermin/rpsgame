@@ -70,7 +70,11 @@ export default {
             }
         },
         score (value) {
-            this.userScore += value
+            if (value < 0 && this.userScore == 0) {
+                this.userScore == 0
+            } else {                
+                this.userScore += value
+            }
         },
         playAgain (value) {
             this.chosen = value
