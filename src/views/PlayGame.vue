@@ -166,7 +166,7 @@ export default {
     .bottom {
         button {
             position: absolute;
-            bottom: 10%;
+            bottom: 5%;
             left: 38%;
             border: 3px solid hsl(217, 16%, 45%);
             outline: none;

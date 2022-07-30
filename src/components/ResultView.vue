@@ -314,7 +314,7 @@ export default {
     }
 }
 .texts {
-    margin-top: 34%;
+    margin-top: 328;
     color: #fff;
     text-align: center;
     h1 {

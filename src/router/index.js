@@ -3,7 +3,7 @@ import WelcomeView from '../components/WelcomeView.vue'
 
 const routes = [
   {
-    path: '/home',
+    path: '/gas',
     name: 'Welcome',
     component: WelcomeView
   },
