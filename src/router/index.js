@@ -3,7 +3,7 @@ import WelcomeView from '../components/WelcomeView.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'Welcome',
     component: WelcomeView
   },
@@ -20,7 +20,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/FindGame.vue')
   },
   {
-    path: '/play',
+    path: '/',
     name: 'playGame',
     component: () => import('../views/PlayGame.vue')
 
