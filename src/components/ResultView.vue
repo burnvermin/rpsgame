@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="resultBody">
         <div class="container-ai">
             <div class="user">
                 <div class="circles"> </div>
@@ -69,7 +69,8 @@ export default {
         this.assign()
         setTimeout(() => this.check(), 500);
         setTimeout(() => document.querySelector('.button').classList.add('delay'), 500);
-        this.$emit('score', this.score)
+        
+        setTimeout(() => this.$emit('score', this.score), 510);
     },
     methods: {
         assign () {
@@ -88,7 +89,7 @@ export default {
                 this.userAns = 3
             }
         },
-        async check () {
+        check () {
             if(this.userAns === this.aiAns){// Draw
                 this.result = 'Draw'
                 document.querySelector('.aiWin').classList.remove('win')
@@ -415,7 +416,7 @@ $medium: 500px;
             margin-left: 0%;
         }
         .ai {
-            margin-right: -20%;
+            margin-right: -15%;
         }
     }
     .resultTexts {

@@ -68,7 +68,7 @@ export default {
         getAIChoice (value) {
             this.aiChoice = value
             if (this.aiChoice) {
-                this.chosen= ""
+                 setTimeout(() => this.chosen= "", 1000)
             }
         },
         score (value) {
