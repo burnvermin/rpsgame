@@ -14,12 +14,14 @@
             <AiView v-else-if="chosen==`ai`"  @aiChoice="getAIChoice" :userChoice="usersChoice"></AiView>
             <ResultView v-else  @score="score" @playAgain="playAgain" :userChoice="usersChoice" :aiChoice="aiChoice"></ResultView>
         </div>
-        <div class="rules">
-            <div class="overlay"></div>
-            <div class="images">
-                <img :src="images.rules" alt="rules" />
+        <div class="rules ">
+            <div class="rulesContainer">                    
+                <div class="overlay"></div>
+                <div class="images">
+                    <img :src="images.rules" alt="rules" />
+                </div>
+                <img :src="images.close" alt="close" id="close" @click="hideRules"/>
             </div>
-            <img :src="images.close" alt="close" id="close" @click="hideRules"/>
         </div>
         <div class="bottom">
             <button @click="showRules" >RULES</button>
@@ -90,13 +92,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+$medium: 500px;
+
 .container {
     padding: 10% 10%;
     justify-content: center;
 
     .top {
         border: 3px solid hsl(217, 16%, 45%);
-        border-radius: 5%;
+        border-radius: 10px;
         display: flex;
         flex-direction: row;
         padding: 5%;
@@ -153,6 +158,7 @@ export default {
             margin: 85% 12%;
             background-color: #fff;
             padding: 5%;
+            width: 100%;
             border-radius: 10px;
             box-shadow: 0px 15px 15px #000;
         }
@@ -182,5 +188,66 @@ export default {
             cursor: pointer;
         }
     }
+
 }
+  @media screen and (min-width: $medium) {
+    .container {
+        padding: 5% 20%;
+        width: 60%;
+
+        .top {
+            padding: 2%;
+            width: 50%;
+            margin: auto;
+            .logo {
+                width: 20%;
+                img {
+                    width: 70%;
+                }
+            }
+            .score {
+                padding: 10px 0     px;
+                font-size: 20px;
+            }
+        }
+        .middle {
+            margin: 5% auto;
+        }
+        .rules.active {
+            .rulesContainer {
+                position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                width: 100vw;
+                height: 100vh;
+                .images {
+                    width: 250px;
+                    padding: 2%;
+                    margin: auto auto;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            #close {
+                left: 50%;
+                bottom: 5%;
+            }
+        }
+        .bottom {
+            width: 53%;
+            position: absolute;
+            bottom: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            button {
+                width: 100px;
+                margin: auto;
+                left: 50%;
+            }
+        }
+    }
+  }
 </style>

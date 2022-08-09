@@ -75,6 +75,10 @@ export default {
 
 
 <style scoped lang="scss">
+$medium: 500px;
+
+@media screen and (min-width: $medium) {
+}
 .container-ai {
     display: flex;
     flex-direction: row;
