@@ -32,7 +32,7 @@
         </div>
         <div class="texts">
             <h1>{{result}}</h1>
-            <button @click="playAgain">PLAY AGAIN</button>
+            <button @click="playAgain" class="button">PLAY AGAIN</button>
         </div>
     </div>
     
@@ -68,6 +68,7 @@ export default {
     created () {
         this.assign()
         setTimeout(() => this.check(), 500);
+        setTimeout(() => document.querySelector('.button').classList.add('delay'), 500);
         this.$emit('score', this.score)
     },
     methods: {
@@ -385,7 +386,8 @@ $medium: 500px;
         font-weight: bolder;
         text-transform: uppercase;
     }
-    button {
+    .button {
+        display: none;
         font-size: 22.5px;
         outline: none; 
         border: none;
@@ -394,6 +396,10 @@ $medium: 500px;
         padding: 5% 15%;
         border-radius: 10px;
     }
+    .button.delay {
+        display: inline;
+    }
+
 }
   @media screen and (min-width: $medium) {
     .container-ai {
